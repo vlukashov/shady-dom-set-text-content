@@ -47,7 +47,7 @@ Live on the GitHub pages: https://vlukashov.github.io/shady-dom-set-text-content
 
 # Run this demo locally
 
-Clone the repo, install the dependencies and start a local server (listening on [localhost:8080](http://localhost:8080))
+Clone the repo, install the dependencies and start a local server (listening on [localhost:8000](http://localhost:8000))
 ```
 git clone https://github.com/vlukashov/shady-dom-set-text-content.git
 cd shady-dom-set-text-content
