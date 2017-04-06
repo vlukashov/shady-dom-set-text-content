@@ -9,8 +9,9 @@
 
     <body>
       <h1 id="title">No polyfills are loaded</h1>
+      <p>Try running the scripts, then load the polyfills and run the scripts again. See the difference.</p>
+
       <button id="run-script">Run script</button>
-      <button id="reset">Reset</button>
       <button id="load-polyfill">Load polyfill</button>
 
       <div class="container">
@@ -47,7 +48,6 @@
             '<div class="item">Item 3</div>';
           document.querySelector('#output').innerHTML = "";
         }
-        document.querySelector('#reset').addEventListener('click', reset);
 
         document.querySelector('#load-polyfill').addEventListener('click', () => {
           reset();
