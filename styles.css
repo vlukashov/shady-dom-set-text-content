@@ -1,0 +1,16 @@
+.container {
+  margin-top: 1em;
+  max-width: 20em;
+}
+
+.output {
+  border: 1px dashed grey;
+  padding: 1em 2em;
+}
+
+.wrapper {
+  padding: 0.65em 1em;
+  border: 1px solid gainsboro;
+  background: #f1f2f3;
+  margin-top: 0.5em;
+}

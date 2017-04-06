@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="charset" content="UTF-8" />
+        <title>Node.textContent issue demo</title>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+
+    <body>
+      <h1 id="title">No polyfills are loaded</h1>
+      <button id="run-script">Run script</button>
+      <button id="reset">Reset</button>
+      <button id="load-polyfill">Load polyfill</button>
+
+      <div class="container">
+        <pre>$('&lt;div class=&quot;wrapper&quot;&gt;&lt;/div&gt;')</pre>
+        <pre class="output" id="output"></pre>
+      </div>
+
+      <div class="container" id="items">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+      </div>
+
+      <script>
+        window.ShadyCSS = {};
+
+        // force the Shady DOM polyfill to be loaded even if the browset supports Shadow DOM (to demo the issue)
+        window.ShadyDOM = {force: true};
+
+        document.querySelector('#run-script').addEventListener('click', () => {
+          $('#items .item').wrap('<div class="wrapper"></div>');
+
+          let output = document.querySelector('#output');
+          output.textContent = "";
+          $('<div class="myclass"></div>').each((i, elem) => {
+            output.textContent += (output.textContent == '' ? '' : "\n")  + elem.outerHTML;
+          });
+        });
+
+        function reset() {
+          document.querySelector('#items').innerHTML =
+            '<div class="item">Item 1</div>' +
+            '<div class="item">Item 2</div>' +
+            '<div class="item">Item 3</div>';
+          document.querySelector('#output').innerHTML = "";
+        }
+        document.querySelector('#reset').addEventListener('click', reset);
+
+        document.querySelector('#load-polyfill').addEventListener('click', () => {
+          reset();
+
+          let title = document.querySelector('#title');
+          title.textContent = 'webcomponents-lite polyfills are loading...';
+
+          let script = document.createElement('script');
+          script.src = 'bower_components/webcomponentsjs/webcomponents-lite.js';
+          script.onload = () => {
+            title.textContent = 'webcomponents-lite polyfills are loaded';
+          };
+
+          document.querySelector('#title').textContent = 'webcomponents-lite polyfills are loaded';
+          let first = document.getElementsByTagName('script')[0];
+          first.parentNode.insertBefore(script, first);
+        });
+      </script>
+    </body>
+</html>

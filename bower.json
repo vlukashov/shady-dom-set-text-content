@@ -19,7 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "jquery#2.2.3",
+    "jquery": "jquery#3.2.1",
     "webcomponentsjs": "webcomponents/webcomponentsjs#1.0.0-rc.7"
   }
 }

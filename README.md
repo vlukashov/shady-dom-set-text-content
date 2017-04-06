@@ -24,7 +24,7 @@ console.log(fragment.childElementCount); // still prints 1
 
 # Why bother?
 
-There are some popular JS libraries (including jQuery) that rely on this behavior. At least, jQuery 2.2.3 is affected:
+There are some popular JS libraries (including jQuery) that rely on this behavior. At least, the latest versions jQuery 2.x and 3.x are affected:
 
 Without the polyfill:
 ```
