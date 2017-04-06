@@ -36,7 +36,7 @@
 
           let output = document.querySelector('#output');
           output.textContent = "";
-          $('<div class="myclass"></div>').each((i, elem) => {
+          $('<div class="wrapper"></div>').each((i, elem) => {
             output.textContent += (output.textContent == '' ? '' : "\n")  + elem.outerHTML;
           });
         });
