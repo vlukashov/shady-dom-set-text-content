@@ -1,0 +1,24 @@
+{
+  "name": "shady-dom-set-text-content",
+  "version": "1.0.0",
+  "description": "This small demo page shows an issue with the Shady DOM v1 polyfill for Node.textContent",
+  "main": "index.html",
+  "scripts": {
+    "postinstall" : "bower install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://vlukashov.github.io/shady-dom-set-text-content"
+  },
+  "keywords": [
+    "webcomponents",
+    "shadydom"
+  ],
+  "author": "Viktor Lukashov",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.8.0",
+    "http-server": "^0.9.0"
+  }
+}
